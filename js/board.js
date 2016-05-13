@@ -69,9 +69,14 @@ Board.prototype.display = function(){
   var id = 0;
   for(var row = 0; row < MAX_ROWS; row++){
     for(var col = 0; col < MAX_COLS; col++){
-      $('#'+id).html(this.board[row][col]);
+      if(this.board[row][col] === 0){
+        $('#'+id).html("");
+      }
+      else {
+        $('#'+id).html(this.board[row][col]);
+      }
+
       id++;
     };
   };
 };
-
